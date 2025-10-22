@@ -129,12 +129,9 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
   //access the isbn of the element by parentElement -> previousElementSibling
   try {
     Store.removeBooks(e.target.parentElement.previousElementSibling.textContent );
-    console.log(e.target)
     if (e.target === null) {
       UI.showAlert("Book removed", 'success');
     }
-
-
   } catch (error) {
   }
 });
@@ -150,7 +147,7 @@ function is_valid_isbn(isbn) {
     return isbnValidator(isbn);
   }
 }
-//<td><a href="#" class="btn btn-danger btn-sm delete">X</td>
+
 function isbnValidator(isbn) {
   //take the first 12 digits into an array
   const lastDigit = Number(isbn) % 10;
